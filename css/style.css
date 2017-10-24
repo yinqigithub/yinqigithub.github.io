@@ -815,6 +815,9 @@ pre {
   left: 0;
   bottom: -1px;
 }
+.widget .tag-cloud .tag-list{
+  overflow: hidden;
+}
 .widget .tag-cloud .tag-list-item{
   float: left;
 }
