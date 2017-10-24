@@ -21,7 +21,7 @@
     <!--Title-->
 
 
-<title>Archives: 2017/10 | 尹启的博客</title>
+<title>jQuery中ready与load事件的区别 | 尹启的博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="尹启的博客" type="application/atom+xml">
@@ -33,6 +33,8 @@
 
 
 
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css?rev=9.12.0">
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
@@ -104,27 +106,100 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-    	<h1 class="info">2017年 10月</h1>
-        
-          <li class="post-items" _href="/2017/10/25/jQuery中ready与load事件的区别/">
-            <h3 class="post-item-title">
-            	<a href="/2017/10/25/jQuery中ready与load事件的区别/"> jQuery中ready与load事件的区别 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2017/10/22/input文本框获取焦点和失去焦点判断/">
-            <h3 class="post-item-title">
-            	<a href="/2017/10/22/input文本框获取焦点和失去焦点判断/"> input文本框获取焦点和失去焦点判断 </a>
-            </h3>  
-          </li>
-        
-    </ul>
-  </div>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="jQuery中ready与load事件的区别">
+            
+            jQuery中ready与load事件的区别
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <span>前端</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            JavaScript
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2017/10/25</span>
+    </span>
 </div>
+
+            
+            
+    </div>
+    
+    <div class="post-body">
+        <p><strong>1、摘要</strong></p>
+<p>大家在编程中使用jQuery还有JS的时候一定会在使用之前这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//document ready</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ...code...</div><div class="line">&#125;)</div><div class="line"><span class="comment">//document ready 简写</span></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ...code...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>有时候也这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//document load</span></div><div class="line">$(<span class="built_in">document</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ...code...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>一个是ready一个是load，这两个到底有什么区别呢？今天我们来聊一聊。</p>
+<p><strong>2、ready和load谁先执行：</strong></p>
+<p>大家在面试的过程中，经常会被问到一个问题：ready与load那一个先执行，那一个后执行？答案是ready先执行，load后执行。</p>
+<p><strong>3、dom文档加载步骤：</strong>　<br>要想理解为什么ready先执行，load后执行就要先聊一下DOM文档加载的步骤</p>
+<p>　　(1) 解析HTML结构。</p>
+<p>　　(2) 加载外部脚本和样式表文件。</p>
+<p>　　(3) 解析并执行脚本代码。</p>
+<p>　　(4) 构造HTML DOM模型。//ready</p>
+<p>　　(5) 加载图片等外部文件。</p>
+<p>　　(6) 页面加载完毕。//load<br>　　<br>从上面的描述中大家应该已经理解了吧，ready在第（4）步完成之后就执行了。但是load要在第（6）步完成之后才执行。</p>
+<p><strong>4、关于ready事件：</strong></p>
+<p>ready事件在DOM结构绘制完成之后就绘执行。这样能确保就算有大量的媒体文件没加载出来，JS代码一样可以执行。</p>
+<p><strong>5、关于load事件：</strong></p>
+<p>load事件必须等到网页中所有内容全部加载完毕之后才被执行。如果一个网页中有大量的图片的话，则就会出现这种情况：网页文档已经呈现出来，但由于网页数据还没有完全加载完毕，导致load事件不能够即时被触发。</p>
+<p><strong>6、总结：</strong></p>
+<p>相信大家已经了解了ready与load的区别，其实如果页面中要是没有图片之类的媒体文件的话ready与load是差不多的，但是页面中有文件就不一样了，所以还是推荐大家在工作中用ready。</p>
+
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明: 商业转载请联系作者获得授权,非商业转载请注明出处 © yinqi
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2017/10/22/input文本框获取焦点和失去焦点判断/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1966422"></script>
+
+
+
+
+
+
+
+
+    </div>
 
 
 
@@ -233,6 +308,11 @@
         </div>
     </div>
 </div>
+
+  <script src="/assets/highlight.pack.js?rev=@@hash"></script>
+  <script>
+    hljs.initHighlightingOnLoad(); //初始化代码高亮 
+  </script>
 
 <script src="/js/app.js?rev=@@hash"></script>
 
