@@ -815,6 +815,9 @@ pre {
   left: 0;
   bottom: -1px;
 }
+.widget .tag-cloud .tag-list-item{
+  float: left;
+}
 .widget .tag-cloud a {
   border: 1px solid #ebebeb;
   padding: 2px 7px;
