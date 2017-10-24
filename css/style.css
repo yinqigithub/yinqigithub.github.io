@@ -224,6 +224,7 @@ pre {
   height: 180px;
   width: 100%;
   background: #464853 url(http://pic.97uimg.com/back_pic/20/16/03/15/c5b463a202a3b06f8ab0a6a9b780e93b.jpg);
+  background-size:100% auto;
 }
 .main-header .banneriframe {
   width: 100%;
