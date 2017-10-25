@@ -21,7 +21,7 @@
     <!--Title-->
 
 
-<title>尹启的博客</title>
+<title>如何在自己的网页中添加天气预报 | 尹启的博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="尹启的博客" type="application/atom+xml">
@@ -33,6 +33,8 @@
 
 
 
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css?rev=9.12.0">
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
@@ -110,8 +112,90 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="如何在自己的网页中添加天气预报">
+            
+            如何在自己的网页中添加天气预报
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <span>前端</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            HTML
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">2017/10/26</span>
+    </span>
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body">
+        <p><strong>1、概述：</strong><br>我们在很多网站上都见过，需要在网页内加入天气预报的地方，尤其是门户网站居多，如果是初学者是相当头疼的一件事。<br><strong>2、解决办法：</strong><br>其实不用过于担心，我们不需要写一个方法获取当前地理位置，也不需要写一个接口对应当前位置的天气，对于这点中国天气网提供了良好的接口，我们只需要在需要加入天气预报的地方加入下面这段代码便可以了：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">width</span>=<span class="string">"280"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">height</span>=<span class="string">"25"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">allowtransparency</span>=<span class="string">"true"</span> <span class="attr">src</span>=<span class="string">"http://i.tianqi.com/index.php?c=code&amp;id=34&amp;icon=1&amp;num=3"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>3、演示：</strong></p>
+<iframe width="280" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
+
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明: 商业转载请联系作者获得授权,非商业转载请注明出处 © yinqi
+            
+        </div>
+        <div>
+            
+        </div>  
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2017/10/25/jQuery中ready与load事件的区别/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2147379"></script>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
                 </main>
                 
     <aside class="col-md-4 sidebar">
@@ -215,6 +299,11 @@
         </div>
     </div>
 </div>
+
+  <script src="/assets/highlight.pack.js?rev=@@hash"></script>
+  <script>
+    hljs.initHighlightingOnLoad(); //初始化代码高亮 
+  </script>
 
 <script src="/js/app.js?rev=@@hash"></script>
 
