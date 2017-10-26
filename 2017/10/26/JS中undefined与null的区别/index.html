@@ -21,7 +21,7 @@
     <!--Title-->
 
 
-<title>jQuery中ready与load事件的区别 | 尹启的博客</title>
+<title>JS中undefined与null的区别 | 尹启的博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="尹启的博客" type="application/atom+xml">
@@ -116,9 +116,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="jQuery中ready与load事件的区别">
+        <h1 id="JS中undefined与null的区别">
             
-            jQuery中ready与load事件的区别
+            JS中undefined与null的区别
             
         </h1>
         <div class="post-meta">
@@ -134,7 +134,7 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            JavaScript
+            HTML
             
         </span>
     </span>
@@ -142,7 +142,7 @@
     
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2017/10/25</span>
+        <span class="date-meta">2017/10/26</span>
     </span>
 </div>
 
@@ -151,25 +151,26 @@
     </div>
     
     <div class="post-body">
-        <p><strong>1、摘要</strong></p>
-<p>大家在编程中使用jQuery还有JS的时候一定会在使用之前这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//document ready</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ...code...</div><div class="line">&#125;)</div><div class="line"><span class="comment">//document ready 简写</span></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ...code...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>有时候也这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//document load</span></div><div class="line">$(<span class="built_in">document</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    ...code...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>一个是ready一个是load，这两个到底有什么区别呢？今天我们来聊一聊。</p>
-<p><strong>2、ready和load谁先执行：</strong></p>
-<p>大家在面试的过程中，经常会被问到一个问题：ready与load那一个先执行，那一个后执行？答案是ready先执行，load后执行。</p>
-<p><strong>3、dom文档加载步骤：</strong>　<br>要想理解为什么ready先执行，load后执行就要先聊一下DOM文档加载的步骤</p>
-<p>　　(1) 解析HTML结构。</p>
-<p>　　(2) 加载外部脚本和样式表文件。</p>
-<p>　　(3) 解析并执行脚本代码。</p>
-<p>　　(4) 构造HTML DOM模型。//ready</p>
-<p>　　(5) 加载图片等外部文件。</p>
-<p>　　(6) 页面加载完毕。//load<br>　　<br>从上面的描述中大家应该已经理解了吧，ready在第（4）步完成之后就执行了。但是load要在第（6）步完成之后才执行。</p>
-<p><strong>4、关于ready事件：</strong></p>
-<p>ready事件在DOM结构绘制完成之后就绘执行。这样能确保就算有大量的媒体文件没加载出来，JS代码一样可以执行。</p>
-<p><strong>5、关于load事件：</strong></p>
-<p>load事件必须等到网页中所有内容全部加载完毕之后才被执行。如果一个网页中有大量的图片的话，则就会出现这种情况：网页文档已经呈现出来，但由于网页数据还没有完全加载完毕，导致load事件不能够即时被触发。</p>
-<p><strong>6、总结：</strong></p>
-<p>相信大家已经了解了ready与load的区别，其实如果页面中要是没有图片之类的媒体文件的话ready与load是差不多的，但是页面中有文件就不一样了，所以还是推荐大家在工作中用ready。</p>
+        <p><strong>1、概述：</strong><br>在JavaScript中存在这样两种原始类型:Null与Undefined。这两种类型常常会使JavaScript的开发人员产生疑惑，在什么时候是Null，什么时候又是Undefined?</p>
+<p>有人说这两个返回值，没有什么区别，只是历史遗留问题罢了，其实还是有一点区别的。</p>
+<p><strong>2、null和undefined的发展史：</strong><br>大多数计算机语言，有且仅有一个表示”无”的值，比如，C语言的NULL，Java语言的null，Python语言的None，Ruby语言的nil。</p>
+<p>有点奇怪的是，JavaScript语言居然有两个表示”无”的值：undefined和null。这是为什么？</p>
+<p>这与JavaScript的历史有关。1995年JavaScript诞生时，最初像Java一样，只设置了null作为表示”无”的值。</p>
+<p>根据C语言的传统，null被设计成可以自动转为0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Number(null)</div><div class="line">// 0</div><div class="line"></div><div class="line">5 + null</div><div class="line">// 5</div></pre></td></tr></table></figure></p>
+<p>但是，JavaScript的设计者BrendanEich，觉得这样做还不够，有两个原因。</p>
+<p>首先，null像在Java里一样，被当成一个对象。但是，JavaScript的数据类型分成原始类型（primitive）和合成类型（complex）两大类，Brendan Eich觉得表示”无”的值最好不是对象。</p>
+<p>其次，JavaScript的最初版本没有包括错误处理机制，发生数据类型不匹配时，往往是自动转换类型或者默默地失败。BrendanEich觉得，如果null自动转为0，很不容易发现错误。</p>
+<p>因此，Brendan Eich又设计了一个undefined。</p>
+<p>JavaScript的最初版本是这样区分的：null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Number(undefined)</div><div class="line">// NaN</div><div class="line"></div><div class="line">5 + undefined</div><div class="line">// NaN</div></pre></td></tr></table></figure></p>
+<p>但是，上面这样的区分，在实践中很快就被证明不可行。目前，null和undefined基本是同义的，只有一些细微的差别。</p>
+<p>null表示”没有对象”，即该处不应该有值。典型用法是：</p>
+<p>（1） 作为函数的参数，表示该函数的参数不是对象。</p>
+<p>（2） 作为对象原型链的终点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object.getPrototypeOf(Object.prototype)</div><div class="line">// null</div></pre></td></tr></table></figure></p>
+<p>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：<br>（1）变量被声明了，但没有赋值时，就等于undefined。</p>
+<p>（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。</p>
+<p>（3）对象没有赋值的属性，该属性的值为undefined。</p>
+<p>（4）函数没有返回值时，默认返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var i;</div><div class="line">i // undefined</div><div class="line"></div><div class="line">function f(x)&#123;console.log(x)&#125;</div><div class="line">f() // undefined</div><div class="line"></div><div class="line">var  o = new Object();</div><div class="line">o.p // undefined</div><div class="line"></div><div class="line">var x = f();</div><div class="line">x // undefined</div></pre></td></tr></table></figure>
 
     </div>
 
@@ -187,10 +188,8 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/10/26/如何在自己的网页中添加天气预报/" class="pre-post btn btn-default"><i class="fa fa-angle-left fa-fw"></i>上一篇</a>
     
-    
-        <a href="/2017/10/22/input文本框获取焦点和失去焦点判断/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
+        <a href="/2017/10/26/如何在自己的网页中添加天气预报/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
     
 </div>
 
