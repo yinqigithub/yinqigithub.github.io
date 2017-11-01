@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yinqigithub.github.io/2017/10/31/%E8%AE%BE%E8%AE%A1%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2017-11-01T15:46:04.033Z</lastmod>
+    <data>
+        <display>
+        <title>设计相关网站</title>
+        <pubTime>2017-10-30T17:13:20.000Z</pubTime>
+        
+        <tag>资源网站</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计" url="http://yinqigithub.github.io/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+             
+              <breadCrumb title="资源" url="http://yinqigithub.github.io/categories/%E8%AE%BE%E8%AE%A1/%E8%B5%84%E6%BA%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yinqigithub.github.io/2017/10/31/AngluarJS-%E5%88%9D%E6%8E%A2/</loc>
     <lastmod>2017-10-31T16:48:17.607Z</lastmod>
     <data>
@@ -20,29 +43,6 @@
           
              
               <breadCrumb title="AngluarJS" url="http://yinqigithub.github.io/categories/%E5%89%8D%E7%AB%AF/AngluarJS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yinqigithub.github.io/2017/10/31/%E8%AE%BE%E8%AE%A1%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2017-10-31T16:46:22.715Z</lastmod>
-    <data>
-        <display>
-        <title>设计相关网站</title>
-        <pubTime>2017-10-30T17:13:20.000Z</pubTime>
-        
-        <tag>资源网站</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计" url="http://yinqigithub.github.io/categories/%E8%AE%BE%E8%AE%A1/"/>
-          
-             
-              <breadCrumb title="资源" url="http://yinqigithub.github.io/categories/%E8%AE%BE%E8%AE%A1/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
